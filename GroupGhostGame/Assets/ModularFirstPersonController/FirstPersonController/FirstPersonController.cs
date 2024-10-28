@@ -220,7 +220,9 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // Clamp pitch between lookAngle
-            pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+            //Old: pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
+            //New: Make it so you can't look up and down for that traditional boomer shooter like stuff
+            pitch = Mathf.Clamp(pitch, -0f, 0f);
 
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
