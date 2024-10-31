@@ -47,11 +47,11 @@ public class Gun : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, dir, out hit, range * 1.5f, raycastLayerMask))
             {
-                Debug.Log(hit.transform.position);
                 if (hit.transform == enemy.transform)
                 {
                     float dist = Vector3.Distance(enemy.transform.position, transform.position);
 
+                    //damage
                     if (dist > range * 0.5f)
                     {
                         enemy.TakeDamage(smallDamage);
@@ -60,12 +60,6 @@ public class Gun : MonoBehaviour
                     {
                         enemy.TakeDamage(bigDamage);
                     }
-
-                    //damage
-                    
-
-                    Debug.DrawRay(transform.position, dir, Color.green);
-                    Debug.Break();
                 }
             }
 
