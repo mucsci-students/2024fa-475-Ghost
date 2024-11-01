@@ -7,16 +7,18 @@ public class Gun : MonoBehaviour
 {
     public float range = 20f;
     public float verticalRange = 20f;
-    public float fireRate;
+    public float gunShootRadius = 20f;
 
     public float bigDamage = 2f;
     public float smallDamage = 1f;
 
+    public float fireRate = 1f;
     private float nextTimeToFire;
-    private BoxCollider gunTrigger;
-
 
     public LayerMask raycastLayerMask;
+    public LayerMask enemyLayerMask;
+    
+    private BoxCollider gunTrigger;
     public EnemyManager enemyManager;
 
     // Start is called before the first frame update
@@ -39,13 +41,23 @@ public class Gun : MonoBehaviour
 
     void Fire()
     {
+        // simulate gun shoot radius
+        Collider[] enemyCollider; 
+        enemyCollider = Physics.OverlapSphere(transform.position, gunShootRadius, enemyLayerMask);
+
+        // alert enemies
+        foreach (Collider c in enemyCollider)
+        {
+            c.GetComponent<EnemyAware>().isAggro = true;
+        }
+
         // damage enemies
         foreach (Enemy enemy in enemyManager.enemiesInTrigger)
         {
             Vector3 dir = enemy.transform.position - transform.position;
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, dir, out hit, range * 1.5f, raycastLayerMask))
+            if (Physics.Raycast(transform.position, dir, out hit, range * 1.5f, raycastLayerMask, QueryTriggerInteraction.Ignore))
             {
                 if (hit.transform == enemy.transform)
                 {
