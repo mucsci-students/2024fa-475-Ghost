@@ -580,22 +580,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2253735835857424751, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
-      propertyPath: m_Layer
-      value: 6
+    - target: {fileID: 1458708225245563394, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575291128998113034, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
+      propertyPath: walkSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4338423817027771954, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
       propertyPath: enemyManager
       value: 
       objectReference: {fileID: 2078294667069385877}
-    - target: {fileID: 4338423817027771954, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
-      propertyPath: enemyLayerMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 4338423817027771954, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
-      propertyPath: raycastLayerMask.m_Bits
-      value: 179
-      objectReference: {fileID: 0}
     - target: {fileID: 5176636827495014363, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
       propertyPath: m_Name
       value: Player
@@ -675,6 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 2078294667069385877}
+  gunHitEffect: {fileID: 7964694156317883791, guid: 888672f9654cdc54188f8bec110ef80c, type: 3}
 --- !u!4 &5112627367820886234
 Transform:
   m_ObjectHideFlags: 0
@@ -804,7 +801,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
