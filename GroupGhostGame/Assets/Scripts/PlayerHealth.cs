@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        armor = maxArmor;
+        //armor = maxArmor;
     }
 
     // Update is called once per frame
@@ -63,13 +63,32 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void HealHealth(int healthGet)
+    //Could add the gameobject to the params and destroy in this method so that the items don't get destroyed when at max health or armor
+    public void HealHealth(int healthGet, GameObject item)
     {
-        health += healthGet;
+        if (health < maxHealth)
+        {
+            health += healthGet;
+            //Destroy(item);
+        }
+
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 
-    public void GetArmor(int armorGet)
+    public void GetArmor(int armorGet, GameObject item)
     {
-        armor += armorGet;
+        if (armor < maxArmor)
+        {
+            armor += armorGet;
+            //Destroy(item);
+        }
+
+        if(armor > maxArmor)
+        {
+            armor = maxArmor;
+        }
     }
 }
