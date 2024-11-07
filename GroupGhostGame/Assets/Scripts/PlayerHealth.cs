@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        UIManager.Instance.UpdateHealth(health);
+        UIManager.Instance.UpdateArmor(armor);
         //armor = maxArmor;
     }
 
@@ -61,6 +63,8 @@ public class PlayerHealth : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.buildIndex);
         }
+        UIManager.Instance.UpdateHealth(health);
+        UIManager.Instance.UpdateArmor(armor);
     }
 
     //Could add the gameobject to the params and destroy in this method so that the items don't get destroyed when at max health or armor
@@ -76,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
+        UIManager.Instance.UpdateHealth(health);
     }
 
     public void GetArmor(int armorGet, GameObject item)
@@ -90,5 +95,6 @@ public class PlayerHealth : MonoBehaviour
         {
             armor = maxArmor;
         }
+        UIManager.Instance.UpdateArmor(armor);
     }
 }

@@ -32,6 +32,8 @@ public class Gun : MonoBehaviour
 
         gunTrigger.size = new Vector3(1, verticalRange, range);
         gunTrigger.center = new Vector3(0, 0, range * 0.5f);
+
+        UIManager.Instance.UpdateAmmo(ammo);
     }
 
     // Update is called once per frame
@@ -86,6 +88,8 @@ public class Gun : MonoBehaviour
 
         //decrease ammo
         --ammo;
+
+        UIManager.Instance.UpdateAmmo(ammo);
     }
 
     public void GetAmmo(int ammoGet, GameObject item)
@@ -101,6 +105,7 @@ public class Gun : MonoBehaviour
             ammo = maxAmmo;
         }
 
+        UIManager.Instance.UpdateAmmo(ammo);
     }
 
     private void OnTriggerEnter(Collider other)

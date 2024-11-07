@@ -197,6 +197,7 @@ MonoBehaviour:
   bigDamage: 2
   smallDamage: 1
   fireRate: 1
+  maxAmmo: 100
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 179
@@ -304,6 +305,7 @@ GameObject:
   - component: {fileID: 1806081031188600794}
   - component: {fileID: 3575291128998113034}
   - component: {fileID: 917286965087162176}
+  - component: {fileID: 5410139242393151397}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -356,7 +358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 04e0fb1eb26012144a71444ed5de5222, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -456,7 +458,7 @@ MonoBehaviour:
   zoomFOV: 30
   zoomStepTime: 5
   playerCanMove: 1
-  walkSpeed: 5
+  walkSpeed: 7
   maxVelocityChange: 10
   enableSprint: 0
   unlimitedSprint: 1
@@ -496,7 +498,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae21351f7c6b804facdc0770e7d8ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 100
+  maxArmor: 100
+--- !u!114 &5410139242393151397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176636827495014363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c22bc0c6d4d10349827b14824063107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasRed: 0
+  hasBlue: 0
+  hasGreen: 0
 --- !u!1 &5362152486196248662
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,15 +30,15 @@ public class ItemPickup : MonoBehaviour
         {
             if (isHealth)
             {
-                other.getComponent<PlayerHealth>().HealHealth(amount, this.gameObject);
+                other.GetComponent<PlayerHealth>().HealHealth(amount, this.gameObject);
             }
             if (isArmor)
             {
-                other.getComponent<PlayerHealth>().GetArmor(amount, this.gameObject);
+                other.GetComponent<PlayerHealth>().GetArmor(amount, this.gameObject);
             }
             if (isAmmo)
             {
-                other.getComponentInChildren<Gun>().GetAmmo(amount, this.gameObject);
+                other.GetComponentInChildren<Gun>().GetAmmo(amount, this.gameObject);
             }
 
             Destroy(gameObject);
