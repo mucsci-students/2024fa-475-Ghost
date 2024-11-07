@@ -6,9 +6,9 @@ using UnityEngine.SearchService;
 public class ItemPickup : MonoBehaviour
 {
 
-    bool isHealth;
-    bool isArmor;
-    bool isAmmo;
+    public bool isHealth;
+    public bool isArmor;
+    public bool isAmmo;
 
     public int amount;
 
