@@ -43,7 +43,6 @@ public class Door : MonoBehaviour
                     //spawn room
                     areaToSpawn.SetActive(true);
                 }
-
             }
             else
             {
@@ -52,9 +51,6 @@ public class Door : MonoBehaviour
                 //spawn room
                 areaToSpawn.SetActive(true);
             }
-
-            
-
         }
     }
 }
