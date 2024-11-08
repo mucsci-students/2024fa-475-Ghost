@@ -7,9 +7,11 @@ public class WeaponInventory : MonoBehaviour
 
     bool meleeActive, gunActive, grenadeActive;
 
-    GameObject melee;
+    GameObject melee; // index 0
     GameObject gun;
-    GameObject grenade;
+    GameObject grenade; // index 2
+
+    int index = 0;
 
 
     // Start is called before the first frame update
@@ -24,10 +26,23 @@ public class WeaponInventory : MonoBehaviour
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             Debug.Log("Scroll Up");
+            index++;
+
+            if (index > 2)
+            {
+                index = 0;
+            }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             Debug.Log("Scroll Down");
+            index--;
+
+            if (index < 0)
+            {
+                index = 2;
+            }
+
         }
 
 
