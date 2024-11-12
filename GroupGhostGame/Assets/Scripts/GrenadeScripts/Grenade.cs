@@ -11,7 +11,7 @@ public class Grenade : MonoBehaviour
     public GameObject explosionEffect;
 
     private float delay = 3f;
-    private float radius = 5f;
+    private float radius = 10f;
     private float force = 700f;
     private float upwardsModifier = 10f;
     private float maxDamage = 100f;
@@ -41,7 +41,7 @@ public class Grenade : MonoBehaviour
     {
         Debug.Log("boom");
         //Shows the explosion effect
-        //Instantiate(explosionEffect, transform.position, transform.rotation);
+        Instantiate(explosionEffect, transform.position, transform.rotation);
 
         //Get nearby Objects
         Collider [] hitColliders = new Collider[10];

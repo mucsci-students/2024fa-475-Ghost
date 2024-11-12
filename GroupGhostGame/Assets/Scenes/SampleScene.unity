@@ -1973,9 +1973,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148c158693cfe5b4da2cae146361e40e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 40
+  throwForce: 0
   grenadePrefab: {fileID: 618658071550931937, guid: 5edfb7717b9c0f749a258e038a4456be, type: 3}
   coolDown: 1.5
+--- !u!114 &2011849195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011849178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7994c74af378ae4fb38f79ab8989c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  melee: {fileID: 2114384799}
+  gun: {fileID: 2126105805}
+  grenade: {fileID: 618658071550931937, guid: 5edfb7717b9c0f749a258e038a4456be, type: 3}
 --- !u!1 &2114384799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,6 +2116,11 @@ MonoBehaviour:
     m_Bits: 128
   enemyManager: {fileID: 2078294667069385877}
   attackRange: 0.5
+--- !u!1 &2126105805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2253735835857424751, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
+  m_PrefabInstance: {fileID: 3033974367874409048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &749874242750682095
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2291,6 +2311,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5176636827495014363, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2011849187}
+    - targetCorrespondingSourceObject: {fileID: 5176636827495014363, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2011849195}
   m_SourcePrefab: {fileID: 100100000, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
 --- !u!23 &3246137755701442282
 MeshRenderer:
