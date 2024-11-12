@@ -39,10 +39,9 @@ public class Door : MonoBehaviour
                 if (reqRed && other.GetComponent<Inventory>().hasRed)
                 {
                     //open door
-                    //doorAnimator.SetTrigger("OpenDoor");
                     open = true;
                     //spawn room
-                    areaToSpawn.SetActive(true);
+                    //areaToSpawn.SetActive(true);
                 }
 
                 if (reqBlue && other.GetComponent<Inventory>().hasBlue)
@@ -50,7 +49,7 @@ public class Door : MonoBehaviour
                     //open door
                     open = true;
                     //spawn room
-                    areaToSpawn.SetActive(true);
+                    //areaToSpawn.SetActive(true);
                 }
 
                 if (reqGreen && other.GetComponent<Inventory>().hasGreen)
@@ -58,7 +57,7 @@ public class Door : MonoBehaviour
                     //open door
                     open = true;
                     //spawn room
-                    areaToSpawn.SetActive(true);
+                    //areaToSpawn.SetActive(true);
                 }
             }
             else
