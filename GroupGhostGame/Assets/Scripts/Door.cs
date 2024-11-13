@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
     private GameObject door;
 
     public bool requiresKey;
-    public bool reqRed, reqBlue, reqGreen;
+    public bool reqRed, reqBlue, reqGreen, reqDegree;
     private bool open = false;
 
     public GameObject areaToSpawn;
@@ -53,6 +53,13 @@ public class Door : MonoBehaviour
                 }
 
                 if (reqGreen && other.GetComponent<Inventory>().hasGreen)
+                {
+                    //open door
+                    open = true;
+                    //spawn room
+                    //areaToSpawn.SetActive(true);
+                }
+                if (reqDegree && (other.GetComponent<Inventory>().hasUpLeft) && (other.GetComponent<Inventory>().hasUpRight) && (other.GetComponent<Inventory>().hasDownLeft) && (other.GetComponent<Inventory>().hasDownRight))
                 {
                     //open door
                     open = true;

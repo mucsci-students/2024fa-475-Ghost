@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ammo;
 
     public Image healthImage;
+    public Image weaponImage;
 
     //Add sprites later
     public Sprite health1; //Full health
@@ -21,6 +22,12 @@ public class UIManager : MonoBehaviour
     public GameObject blueKey;
     public GameObject greenKey;
 
+    public Sprite Gun;
+    public Sprite Grenade;
+
+    public GameObject GunHeld;
+    public GameObject GrenadeHeld;
+
     private static UIManager _instance;
     public static UIManager Instance 
     { 
@@ -29,6 +36,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        GrenadeHeld.SetActive(false);
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
@@ -100,5 +108,23 @@ public class UIManager : MonoBehaviour
         blueKey.SetActive(false);
         greenKey.SetActive(false);
     }
+
+    public void UpdateWeaponImage(int activeWeapon)
+    {
+        if(activeWeapon == 0)
+        {
+            GunHeld.SetActive(true);
+            GrenadeHeld.SetActive(false);
+            weaponImage.sprite = Gun;
+        } else
+        {
+            GunHeld.SetActive(false);
+            GrenadeHeld.SetActive(true);
+            weaponImage.sprite = Grenade;
+        }
+    }
+
+   
+
 
 }
