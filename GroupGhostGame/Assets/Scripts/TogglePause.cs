@@ -11,8 +11,6 @@ public class TogglePause : MonoBehaviour
     // Track if the pause screen is active or not
     private bool ispaused = false;
 
-    private bool runOnce = false;
-
     // Start is called before the first frame update
     void Start()
     {
