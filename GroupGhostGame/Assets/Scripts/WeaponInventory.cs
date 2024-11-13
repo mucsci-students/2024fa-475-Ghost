@@ -7,9 +7,9 @@ public class WeaponInventory : MonoBehaviour
 
     bool meleeActive, gunActive, grenadeActive;
 
-    GameObject melee; // index 0
-    GameObject gun;
-    GameObject grenade; // index 2
+    public GameObject melee; // index 0
+    public GameObject gun;
+    public GameObject grenade; // index 2
 
     int index = 0;
 
@@ -17,7 +17,9 @@ public class WeaponInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        melee.SetActive(true);
+        gun.SetActive(false);
+        grenade.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,18 +48,27 @@ public class WeaponInventory : MonoBehaviour
         }
 
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    melee.SetActive(true);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    gun.SetActive(true);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    grenade.SetActive(true);
-        //}
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            melee.SetActive(true);
+            gun.SetActive(false);
+            grenade.SetActive(false);
+
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            gun.SetActive(true);
+            melee.SetActive(false);
+            grenade.SetActive(false);
+
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            grenade.SetActive(true);
+            melee.SetActive(false);
+            gun.SetActive(false);
+
+        }
     }
 
 

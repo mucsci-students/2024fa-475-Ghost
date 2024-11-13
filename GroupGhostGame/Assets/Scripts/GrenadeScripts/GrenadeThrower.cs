@@ -10,6 +10,7 @@ public class GrenadeThrower : MonoBehaviour
     public GameObject grenadePrefab;
     public float coolDown = 1.5f;
     private float counter = 0f;
+    
 
     // Update is called once per frame
     void Update()
@@ -25,7 +26,7 @@ public class GrenadeThrower : MonoBehaviour
 
     void ThrowGrenade()
     {
-        Vector3 spawnPos = transform.position + (transform.forward * 10);
+        Vector3 spawnPos = transform.position + (transform.forward * 2);
         GameObject grenade = Instantiate(grenadePrefab, spawnPos, transform.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward  * throwForce, ForceMode.VelocityChange);
