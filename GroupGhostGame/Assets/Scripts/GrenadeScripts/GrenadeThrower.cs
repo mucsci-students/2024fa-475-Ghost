@@ -15,7 +15,7 @@ public class GrenadeThrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.G) && counter >= coolDown)
+        if (Input.GetMouseButtonDown(0) && counter > coolDown)
         {
             ThrowGrenade();
             counter = 0f;

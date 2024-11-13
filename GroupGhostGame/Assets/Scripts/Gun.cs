@@ -33,7 +33,9 @@ public class Gun : MonoBehaviour
         gunTrigger.size = new Vector3(1, verticalRange, range);
         gunTrigger.center = new Vector3(0, 0, range * 0.5f);
 
+        ammo = 10;
         UIManager.Instance.UpdateAmmo(ammo);
+        enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     // Update is called once per frame

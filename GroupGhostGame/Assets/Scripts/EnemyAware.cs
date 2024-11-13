@@ -24,9 +24,9 @@ public class EnemyAware : MonoBehaviour
             isAggro = true;
         }
 
-        if (isAggro)
-        {
-            GetComponent<MeshRenderer>().material = agroMat;
-        }
+        //if (isAggro)
+        //{
+        //    GetComponent<MeshRenderer>().material = agroMat;
+        //}
     }
 }

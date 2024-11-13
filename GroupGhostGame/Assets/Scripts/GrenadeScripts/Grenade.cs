@@ -24,6 +24,7 @@ public class Grenade : MonoBehaviour
     void Start()
     {
         countdown = delay;
+        enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     // Update is called once per frame

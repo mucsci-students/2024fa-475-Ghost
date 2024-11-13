@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        
+        enemyManager = FindObjectOfType<EnemyManager>();
     }
 
     void Update()
