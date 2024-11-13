@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1330,10 +1330,10 @@ MonoBehaviour:
   armor: {fileID: 1072420034}
   ammo: {fileID: 126747216}
   healthImage: {fileID: 527817823}
-  health1: {fileID: 0}
-  health2: {fileID: 0}
-  health3: {fileID: 0}
-  health4: {fileID: 0}
+  health1: {fileID: 66458647, guid: 28657d298e0f2b94b803ee03565697a2, type: 3}
+  health2: {fileID: -1355968175, guid: 28657d298e0f2b94b803ee03565697a2, type: 3}
+  health3: {fileID: -1482884176, guid: 28657d298e0f2b94b803ee03565697a2, type: 3}
+  health4: {fileID: 1352690196, guid: 28657d298e0f2b94b803ee03565697a2, type: 3}
   redKey: {fileID: 1851796868}
   blueKey: {fileID: 1557917515}
   greenKey: {fileID: 1031238129}
