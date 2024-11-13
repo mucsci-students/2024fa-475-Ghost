@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponInventory : MonoBehaviour
@@ -7,19 +8,19 @@ public class WeaponInventory : MonoBehaviour
 
     bool meleeActive, gunActive, grenadeActive;
 
-    //public GameObject melee; // index 0
+    public EnemyManager manager; // index 0
     public GameObject gun;
     public GameObject grenade; // index 2
     private GameObject[] inventory = new GameObject[2];
 
-    int index = 0;
+    public int index = 0;
 
 
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
         //melee.SetActive(true);
-        gun.SetActive(false);
+        gun.SetActive(true);
         grenade.SetActive(false);
         //inventory[0] = melee;
         inventory[0] = gun;
@@ -70,12 +71,13 @@ public class WeaponInventory : MonoBehaviour
         //}
     }
 
-    private void Change()
+    public void Change()
     {
         foreach (GameObject item in inventory)
         {
             item.SetActive(false);
         }
         inventory[index].SetActive(true);
+        manager.Clear();
     }
 }

@@ -344,7 +344,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1592561768}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -355,7 +355,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!224 &617100306
 RectTransform:
@@ -796,6 +796,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018358550}
   m_CullTransparentMesh: 1
+--- !u!20 &1592561768 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8077958761442362075, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
+  m_PrefabInstance: {fileID: 3033974367874409048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687890130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3169444423307040014, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2078294667069385877}
     - target: {fileID: 4338423817027771954, guid: 83f2de45fb17adb46944a4ab618ca1bb, type: 3}
       propertyPath: enemyManager
       value: 
