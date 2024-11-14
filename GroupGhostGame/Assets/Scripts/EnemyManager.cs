@@ -21,10 +21,7 @@ public class EnemyManager : MonoBehaviour
 
     public void Clear()
     {
-        foreach (var item in enemiesInTrigger)
-        {
-            RemoveEnemy(item);
-        }
+        enemiesInTrigger.Clear();
     }
 
 }
