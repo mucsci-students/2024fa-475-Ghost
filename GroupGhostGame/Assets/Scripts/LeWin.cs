@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LeWin : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void GoMain()
     {
         SceneManager.LoadSceneAsync(0);

@@ -7,6 +7,9 @@ public class Exit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadSceneAsync(2);
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadSceneAsync(2);
+        }
     }
 }

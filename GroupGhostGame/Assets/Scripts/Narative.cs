@@ -73,7 +73,7 @@ public class Narative : MonoBehaviour
         player.GetComponent<WeaponInventory>().grenade.SetActive(false);
         //player.GetComponent<WeaponInventory>().manager.Clear();
         Cursor.lockState = CursorLockMode.None;
-        message.text = "You Passed the 4 Language Trials\r\nFind the Blue Locker";
+        message.text = "You Passed the Trials\r\nFind the Blue Locker\r\nFind the Yellow Exit";
         button.text = "Ominous";
     }
 

@@ -3384,9 +3384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pass the 4 Language Trials
-
-    First: C'
+  m_text: You Passed the Trials\r\nFind the Blue Locker\r\nFind the Yellow Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -38831,6 +38829,7 @@ GameObject:
   - component: {fileID: 2847974214796312362}
   - component: {fileID: 2856146167861278604}
   - component: {fileID: 398184208657842109}
+  - component: {fileID: 2881889679988028944}
   - component: {fileID: 2881889679988028943}
   m_Layer: 0
   m_Name: locker_4
@@ -38854,7 +38853,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!65 &2881889679988028943
+--- !u!114 &2881889679988028943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879119581207647314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6ffb8432daf4743aa9f3f6097c1152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2881889679988028944
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38873,8 +38884,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.89, y: 2.7074623, z: 2.33}
-  m_Center: {x: -0.07751861, y: 1.3708208, z: 0.61}
+  m_Size: {x: 2, y: 2, z: 3}
+  m_Center: {x: -0.07751861, y: 1.3708208, z: 0.6}
 --- !u!1001 &3976212417147606470
 PrefabInstance:
   m_ObjectHideFlags: 0
