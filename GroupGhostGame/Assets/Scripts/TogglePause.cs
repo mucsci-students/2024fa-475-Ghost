@@ -14,31 +14,46 @@ public class TogglePause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResumeButton();
     }
 
     // Update is called once per frame
     void Update()
     {
-        pauseMenu.enabled = ispaused;
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ispaused = !ispaused;
-        }
 
-        if (ispaused)
-        {
-            Time.timeScale = 0f;
-            player.SetActive(false);
+            if (ispaused)
+            {
+                Pause();
+            }
+            if (!ispaused)
+            {
+                ResumeButton();
+            }
         }
-        if (!ispaused)
-        {
-            Time.timeScale = 1f;
-            player.SetActive(true);
-        }
+    }
+
+    private void Pause()
+    {
+        ispaused = true;
+        Time.timeScale = 0f;
+        player.GetComponent<FirstPersonController>().enabled = false;
+        player.GetComponent<WeaponInventory>().gun.SetActive(false);
+        player.GetComponent<WeaponInventory>().grenade.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        pauseMenu.enabled = ispaused;
     }
 
     public void ResumeButton()
     {
         ispaused = false;
+        Time.timeScale = 1f;
+        player.GetComponent<FirstPersonController>().enabled = true;
+        player.GetComponent<WeaponInventory>().Change();
+        Cursor.lockState = CursorLockMode.Locked;
+        pauseMenu.enabled = ispaused;
     }
 }

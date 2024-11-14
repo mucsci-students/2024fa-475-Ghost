@@ -8,12 +8,23 @@ public class EnemyManager : MonoBehaviour
     
     public void AddEnemy(Enemy enemy)
     {
-        enemiesInTrigger.Add(enemy);
+        //if (!enemiesInTrigger.Contains(enemy))
+        //{
+            enemiesInTrigger.Add(enemy);
+        //}
     }
 
     public void RemoveEnemy(Enemy enemy)
     {
         enemiesInTrigger.Remove(enemy);
+    }
+
+    public void Clear()
+    {
+        foreach (var item in enemiesInTrigger)
+        {
+            RemoveEnemy(item);
+        }
     }
 
 }
