@@ -14,7 +14,7 @@ public class TogglePause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ResumeButton();
+        ispaused = false;
     }
 
     // Update is called once per frame
@@ -43,6 +43,7 @@ public class TogglePause : MonoBehaviour
         player.GetComponent<FirstPersonController>().enabled = false;
         player.GetComponent<WeaponInventory>().gun.SetActive(false);
         player.GetComponent<WeaponInventory>().grenade.SetActive(false);
+        //player.GetComponent<WeaponInventory>().manager.Clear();
         Cursor.lockState = CursorLockMode.None;
         pauseMenu.enabled = ispaused;
     }
