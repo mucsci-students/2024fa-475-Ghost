@@ -5,9 +5,9 @@ using UnityEngine;
 public class WeaponInventory : MonoBehaviour
 {
 
-    bool meleeActive, gunActive, grenadeActive;
+    bool  gunActive, grenadeActive;
 
-    // index 0
+     // index 0
     public GameObject gun;
     public GameObject grenade; // index 1
     private GameObject[] inventory = new GameObject[2];
@@ -21,7 +21,7 @@ public class WeaponInventory : MonoBehaviour
         
         gun.SetActive(true);
         grenade.SetActive(false);
-
+        //inventory[0] = melee;
         inventory[0] = gun;
         inventory[1] = grenade;
     }
@@ -63,7 +63,7 @@ public class WeaponInventory : MonoBehaviour
             index = 1;
             Change();
         }
-       
+        
     }
 
     private void Change()
