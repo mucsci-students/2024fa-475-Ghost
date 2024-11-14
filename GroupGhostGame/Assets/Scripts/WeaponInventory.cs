@@ -24,6 +24,8 @@ public class WeaponInventory : MonoBehaviour
      
         inventory[0] = gun;
         inventory[1] = grenade;
+
+        FindObjectOfType<Narative>().StartMessage();
     }
 
     // Update is called once per frame
@@ -74,6 +76,14 @@ public class WeaponInventory : MonoBehaviour
         }
         inventory[index].SetActive(true);
         UIManager.Instance.UpdateWeaponImage(index);
+        if(index == 0)
+        {
+            gun.GetComponent<Gun>().Ammo();
+        }
+        if (index == 1)
+        {
+            grenade.GetComponent<GrenadeThrower>().Ammo();
+        }
         manager.Clear();
 
         

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.VFX;
 
 public class GrenadeThrower : MonoBehaviour
@@ -11,7 +12,7 @@ public class GrenadeThrower : MonoBehaviour
     public float coolDown = 6f;
     private float counter = 0f;
 
-    [SerializeField]private GameObject Visible;
+    [SerializeField]private Image Visible;
 
     private void Start()
     {
@@ -22,14 +23,19 @@ public class GrenadeThrower : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && counter > coolDown)
         {
-            Visible.SetActive(false);
+            Visible.enabled = false;
             ThrowGrenade();
             counter = 0f;
            
         }
         if (counter > coolDown)
         {
-            Visible.SetActive(true);
+            Visible.enabled = true;
+            UIManager.Instance.UpdateAmmo(1);
+        }
+        else
+        {
+            UIManager.Instance.UpdateAmmo(0);
         }
         counter += Time.deltaTime;
     }
@@ -40,5 +46,10 @@ public class GrenadeThrower : MonoBehaviour
         GameObject grenade = Instantiate(grenadePrefab, spawnPos, transform.rotation);
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward  * throwForce, ForceMode.VelocityChange);
+    }
+
+    public void Ammo()
+    {
+        Update();
     }
 }

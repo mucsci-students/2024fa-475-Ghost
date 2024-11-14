@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        GrenadeHeld.SetActive(false);
+        UpdateWeaponImage(0);
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);

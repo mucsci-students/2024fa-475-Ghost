@@ -15,6 +15,7 @@ public class TogglePause : MonoBehaviour
     void Start()
     {
         ispaused = false;
+        pauseMenu.enabled = ispaused;
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class TogglePause : MonoBehaviour
         ispaused = true;
         Time.timeScale = 0f;
         player.GetComponent<FirstPersonController>().enabled = false;
+        player.GetComponent<WeaponInventory>().enabled = false;
         player.GetComponent<WeaponInventory>().gun.SetActive(false);
         player.GetComponent<WeaponInventory>().grenade.SetActive(false);
         //player.GetComponent<WeaponInventory>().manager.Clear();
@@ -53,6 +55,7 @@ public class TogglePause : MonoBehaviour
         ispaused = false;
         Time.timeScale = 1f;
         player.GetComponent<FirstPersonController>().enabled = true;
+        player.GetComponent<WeaponInventory>().enabled = true;
         player.GetComponent<WeaponInventory>().Change();
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.enabled = ispaused;

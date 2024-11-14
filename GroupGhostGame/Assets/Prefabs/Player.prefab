@@ -517,9 +517,10 @@ MonoBehaviour:
   hasRed: 0
   hasBlue: 0
   hasGreen: 0
-  hasObjItem1: 0
-  hasObjItem2: 0
-  hasObjItem3: 0
+  hasUpLeft: 0
+  hasUpRight: 0
+  hasDownLeft: 0
+  hasDownRight: 0
 --- !u!114 &3169444423307040014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,8 +533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7994c74af378ae4fb38f79ab8989c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   gun: {fileID: 2253735835857424751}
   grenade: {fileID: 5522730302311515645}
+  index: 0
 --- !u!1 &5362152486196248662
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForce: 0
   grenadePrefab: {fileID: 618658071550931937, guid: 5edfb7717b9c0f749a258e038a4456be, type: 3}
-  coolDown: 1.5
+  coolDown: 6
+  Visible: {fileID: 0}
 --- !u!1 &5736264206657196646
 GameObject:
   m_ObjectHideFlags: 0

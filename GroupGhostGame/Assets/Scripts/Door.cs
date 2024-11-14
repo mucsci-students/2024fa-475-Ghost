@@ -21,9 +21,10 @@ public class Door : MonoBehaviour
     {
         if (open)
         {
-            Quaternion currentRot = door.transform.rotation;
-            Quaternion targetRot = Quaternion.Euler(0, 90, 0);
-            door.transform.rotation = Quaternion.Slerp(currentRot, targetRot, 0.1f);
+            door.SetActive(false);
+            //Quaternion currentRot = door.transform.rotation;
+            //Quaternion targetRot = Quaternion.Euler(0, (transform.rotation.y + 90f), 0);
+            //door.transform.rotation = Quaternion.Slerp(currentRot, targetRot, 0.1f);
         }
     }
 
@@ -41,7 +42,7 @@ public class Door : MonoBehaviour
                     //open door
                     open = true;
                     //spawn room
-                    //areaToSpawn.SetActive(true);
+                    if(areaToSpawn != null) areaToSpawn.SetActive(true);
                 }
 
                 if (reqBlue && other.GetComponent<Inventory>().hasBlue)
@@ -49,7 +50,7 @@ public class Door : MonoBehaviour
                     //open door
                     open = true;
                     //spawn room
-                    //areaToSpawn.SetActive(true);
+                    if (areaToSpawn != null) areaToSpawn.SetActive(true);
                 }
 
                 if (reqGreen && other.GetComponent<Inventory>().hasGreen)
@@ -57,7 +58,7 @@ public class Door : MonoBehaviour
                     //open door
                     open = true;
                     //spawn room
-                    //areaToSpawn.SetActive(true);
+                    if (areaToSpawn != null) areaToSpawn.SetActive(true);
                 }
                 if (reqDegree && (other.GetComponent<Inventory>().hasUpLeft) && (other.GetComponent<Inventory>().hasUpRight) && (other.GetComponent<Inventory>().hasDownLeft) && (other.GetComponent<Inventory>().hasDownRight))
                 {
@@ -73,7 +74,7 @@ public class Door : MonoBehaviour
                 //doorAnimator.SetTrigger("OpenDoor");
                 open = true;
                 //spawn room
-                //areaToSpawn.SetActive(true);
+                if (areaToSpawn != null) areaToSpawn.SetActive(true);
             }
         }
     }

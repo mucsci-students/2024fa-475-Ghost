@@ -364,6 +364,11 @@ public class FirstPersonController : MonoBehaviour
         {
             HeadBob();
         }
+
+        if (crosshair)
+        {
+            crosshairObject.color = crosshairColor;
+        }
     }
 
     void FixedUpdate()

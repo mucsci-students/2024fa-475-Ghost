@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DegreePickup : MonoBehaviour
 {
+    public Narative narative;
+    public Inventory playerInv;
     public bool isDegreeOne, isDegreeTwo, isDegreeThree, isDegreeFour;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        narative = FindObjectOfType<Narative>();
+        playerInv = FindObjectOfType<Inventory>();
     }
 
     // Update is called once per frame
@@ -24,26 +28,27 @@ public class DegreePickup : MonoBehaviour
             if (isDegreeOne)
             {
                 other.GetComponent<Inventory>().hasUpLeft = true;
-                UIManager.Instance.UpdateKeys("upLeft");
+                narative.Second();
             }
 
             if (isDegreeTwo)
             {
                 other.GetComponent<Inventory>().hasUpRight = true;
-                UIManager.Instance.UpdateKeys("upRight");
+                narative.First();
             }
 
             if (isDegreeThree)
             {
                 other.GetComponent<Inventory>().hasDownLeft = true;
-                UIManager.Instance.UpdateKeys("lowLeft");
+                narative.Fourth();
             }
            
             if (isDegreeFour)
             {
                 other.GetComponent<Inventory>().hasDownRight = true;
-                UIManager.Instance.UpdateKeys("lowRight");
+                narative.Third();
             }
+            playerInv.UpdateDegree();
             Destroy(this.gameObject);
         }
     }

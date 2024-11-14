@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype Classroom.unity
     guid: de4e9bf400df84943a2944073cd3dca6
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: e2ab6b9a7a712184f8ccc0d23d5673c0
   m_configObjects: {}

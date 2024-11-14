@@ -18,7 +18,7 @@ public class Grenade : MonoBehaviour
 
     float countdown;
     bool hasExploded = false;
-    
+    public AudioClip explosionAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +40,8 @@ public class Grenade : MonoBehaviour
 
     void Explode()
     {
+        AudioSource.PlayClipAtPoint(explosionAudio, transform.position, 1f);
+
         Debug.Log("boom");
         //Shows the explosion effect
         Instantiate(explosionEffect, transform.position, transform.rotation);

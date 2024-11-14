@@ -45,10 +45,22 @@ public class Gun : MonoBehaviour
         {
             Fire();
         }
+
+        if (enemyManager.enemiesInTrigger.Count > 0)
+        {
+            transform.parent.GetComponent<FirstPersonController>().crosshairColor = Color.red;
+        }
+        else
+        {
+            transform.parent.GetComponent<FirstPersonController>().crosshairColor = Color.white;
+        }
     }
 
     void Fire()
     {
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().Play();
+        
         // simulate gun shoot radius
         Collider[] enemyCollider; 
         enemyCollider = Physics.OverlapSphere(transform.position, gunShootRadius, enemyLayerMask);
@@ -107,6 +119,11 @@ public class Gun : MonoBehaviour
             ammo = maxAmmo;
         }
 
+        UIManager.Instance.UpdateAmmo(ammo);
+    }
+
+    public void Ammo()
+    {
         UIManager.Instance.UpdateAmmo(ammo);
     }
 
